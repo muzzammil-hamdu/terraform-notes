@@ -1,0 +1,47 @@
+Agenda
+	Infrastructure as a code
+		controlling/creating/ managinf all the service models (iaas/paas/saas)
+		
+		characterstics
+			predefined structure
+			versioning
+			immutable resource
+		
+		config management -> paas
+			install and configure sofwares/application
+			ansible, chef, puppet, salt stack  -> ansible			
+		server templating -> saas
+			templates with predefined application and libraries (containeraisation)
+			docker, containerd, cri-o, packers -> Docker		
+		provisioning tools -> iaas
+			creating and managing the resources in cloud(on premisis support)
+			teraform, arm, cloud formation -> terraform
+			
+	Terraform
+		opensource IAC to create and manage resources in local/in cloud
+		hashicop (company) -> HCL -> hashicop config language
+		supports liraries and plugins(providers)
+		platform agnostic -> same behaviour in any platform
+		it supports iaas/saas/paas
+		
+	Installation
+		pre req
+			sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+		key
+			wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+			
+		source files
+			echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg]  https://apt.releases.hashicorp.com $(lsb_release -cs) main" |  sudo tee /etc/apt/sources.list.d/hashicorp.list
+						
+		update and install
+			sudo apt-get update
+			sudo apt-get install terraform
+			
+		verificaton
+			terraform -v
+			
+		windows
+			https://releases.hashicorp.com/terraform/1.12.2/terraform_1.12.2_windows_386.zip
+			extract the zip
+			add into env variable
+			verification
